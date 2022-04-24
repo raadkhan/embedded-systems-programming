@@ -29,6 +29,27 @@ typedef struct
     point corns[3];
 } triangle;
 
+// C standard requires all initialized variables have initial values via
+// initializer bytes in ROM to .data in RAM, and all uninitialized variables set
+// to zero via .bss in RAM
+int16_t x = -1;
+uint32_t y = GREEN_LED | RED_LED;
+int16_t sqr[] = {
+    1 * 1,
+    2 * 2,
+    3 * 3,
+    4 * 4
+};
+
+point p1 = {
+    123U,
+    0x1234U
+};
+
+window w1 = {
+    {123U, 0x1234U},
+    {234U, 0x2345U}
+};
 
 unsigned int fact(unsigned n);
 int* swap(int* x, int* y);
